@@ -1,0 +1,25 @@
+version: '3'
+services:
+  spring:
+    image: mcr.microsoft.com/devcontainers/java:1-21-bullseye
+    working_dir: /opt/app
+    tty: true
+    environment:
+      TZ: Asia/Tokyo
+      LANG: C.UTF-8
+    ports:
+      - 8080:8080
+    volumes:
+      - ../:/opt/app
+    depends_on:
+      - db
+  db:
+    image: postgres:16.3-bullseye
+    # If you want to persist DB information, add the following:
+    # volumes:
+    #   - postgres_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+volumes:
+  postgres_volume:

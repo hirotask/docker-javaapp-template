@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "JavaSpringboot",
+	"dockerComposeFile": [
+		"./compose.yml"
+	],
+	"service": "spring",
+	"workspaceFolder": "/opt/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"fwcd.kotlin",
+				"mathiasfrohlich.Kotlin",
+				"Pivotal.vscode-boot-dev-pack",
+				"vscjava.vscode-spring-initializr",
+				"Pivotal.vscode-spring-boot",
+				"vscjava.vscode-spring-boot-dashboard",
+				"voidrot.liquibase",
+				"vscjava.vscode-gradle",
+				"EditorConfig.EditorConfig",
+				"shd101wyy.markdown-preview-enhanced"
+			],
+			"settings": {
+				"editor.formatOnPaste": true,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"[kotlin]": {
+					"editor.defaultFormatter": "fwcd.kotlin"
+				},
+				"[java]": {
+					"editor.suggest.snippetsPreventQuickSuggestions": false,
+					"editor.defaultFormatter": "redhat.java"
+				},
+				"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+				"java.format.settings.profile": "GoogleStyle",
+				"java.codeGeneration.useBlocks": true,
+				"java.saveActions.organizeImports": true
+			}
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8080
+	]
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
